@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dyjaugugjsd5" path="res://assets/tileset/lumin-tileset.png" id="2_j56xb"]
 [ext_resource type="PackedScene" uid="uid://y11gc03ucyx" path="res://actors/player_1.tscn" id="2_t8t64"]
 [ext_resource type="PackedScene" uid="uid://5khy7b6c4ovw" path="res://actors/player_2.tscn" id="3_7dpcd"]
+[ext_resource type="PackedScene" uid="uid://503kr16ap4ec" path="res://items/chave.tscn" id="3_ax4ek"]
 [ext_resource type="PackedScene" uid="uid://brpjuurhxm2eg" path="res://items/coin.tscn" id="3_wbixv"]
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
 [ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
@@ -110,6 +111,9 @@ corner_radius_bottom_left = 20
 rotation = -3.14159
 tile_map_data = PackedByteArray("AAD9//3/AgACAAAAAAD8//3/AgACAAAAAAD7//3/AgACAAAAAAD6//3/AgACAAAAAAD5//3/AgACAAAAAAD4//3/AgACAAAAAAD3//3/AgACAAAAAAD2//3/AgACAAAAAAD1//3/AgACAAAAAAD0//3/AgACAAAAAADz//3/AgACAAAAAADy//3/AgACAAAAAADx//3/AgACAAAAAADw//3/AgACAAAAAADv//3/AgACAAAAAADu//3/AgABAAAAAAD+//3/AgADAAAAAAD1//r/AgAAAAAAAAD4//r/AgAAAAAAAAA=")
 tile_set = SubResource("TileSet_54r8h")
+
+[node name="chave" parent="." instance=ExtResource("3_ax4ek")]
+position = Vector2(136, 251)
 
 [node name="Coins-LW" type="Node2D" parent="."]
 

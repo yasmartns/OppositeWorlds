@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqjxjmmig4nv4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3umm0"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="porta" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3umm0")
+animation = &"open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
