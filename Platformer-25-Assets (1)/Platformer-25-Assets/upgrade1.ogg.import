@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bf6wmop1hcb3t"
+path="res://.godot/imported/upgrade1.ogg-c2374186a045698e488f26f766674d61.oggvorbisstr"
+
+[deps]
+
+source_file="res://Platformer-25-Assets (1)/Platformer-25-Assets/upgrade1.ogg"
+dest_files=["res://.godot/imported/upgrade1.ogg-c2374186a045698e488f26f766674d61.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

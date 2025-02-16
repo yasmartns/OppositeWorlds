@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bowqkfgs4d15n"
+path="res://.godot/imported/confirmation_002.ogg-f14b0f2feca421d7e9ad8e2a2efb2f0e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Platformer-25-Assets (1)/Platformer-25-Assets/confirmation_002.ogg"
+dest_files=["res://.godot/imported/confirmation_002.ogg-f14b0f2feca421d7e9ad8e2a2efb2f0e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

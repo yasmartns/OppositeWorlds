@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://1emtmwvv3jdk"]
+[gd_scene load_steps=14 format=4 uid="uid://1emtmwvv3jdk"]
 
 [ext_resource type="Texture2D" uid="uid://c6uawdhtw50ky" path="res://assets/tileset/nox-tileset.png" id="1_0kre4"]
 [ext_resource type="Texture2D" uid="uid://dyjaugugjsd5" path="res://assets/tileset/lumin-tileset.png" id="2_j56xb"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://5khy7b6c4ovw" path="res://actors/player_2.tscn" id="3_7dpcd"]
 [ext_resource type="PackedScene" uid="uid://brpjuurhxm2eg" path="res://items/coin.tscn" id="3_wbixv"]
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
+[ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
+[ext_resource type="Script" path="res://levels/hud.gd" id="8_4p7cw"]
+[ext_resource type="Texture2D" uid="uid://bye8c2evfhtd7" path="res://icon.svg" id="8_ikgqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgmjl"]
 texture = ExtResource("1_0kre4")
@@ -94,6 +97,13 @@ physics_layer_1/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_hgmjl")
 sources/3 = SubResource("TileSetAtlasSource_2f6lq")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fp5l"]
+bg_color = Color(0, 0, 0, 0.301961)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="World-01" type="Node2D"]
 
 [node name="Level-NTM" type="TileMapLayer" parent="."]
@@ -108,15 +118,51 @@ position = Vector2(184, 248)
 
 [node name="Coins-NW" type="Node2D" parent="."]
 
-[node name="coin" parent="Coins-NW" instance=ExtResource("4_ili7a")]
+[node name="Coins" parent="Coins-NW" instance=ExtResource("4_ili7a")]
 position = Vector2(120, 108)
 
 [node name="Level-LTM" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAACABMAAwABAAAAAAADABMAAwABAAAAAAAEABMAAwABAAAAAAAFABMAAwABAAAAAAAGABMAAwABAAAAAAAHABMAAwABAAAAAAAIABMAAwABAAAAAAAJABMAAwABAAAAAAAKABMAAwABAAAAAAALABMAAwABAAAAAAAMABMAAwABAAAAAAANABMAAwABAAAAAAAOABMAAwABAAAAAAAPABMAAwABAAAAAAAQABMAAwABAAAAAAARABMAAwADAAAAAAAIABAAAwAAAAAAAAALABAAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_54r8h")
 
+[node name="Key" parent="." instance=ExtResource("5_r8ahy")]
+position = Vector2(122, 293)
+
 [node name="Player1" parent="." instance=ExtResource("2_t8t64")]
 position = Vector2(74, 254)
 
 [node name="Player2" parent="." instance=ExtResource("3_7dpcd")]
 position = Vector2(77, 83)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("8_4p7cw")
+
+[node name="Panel" type="Panel" parent="HUD"]
+offset_right = 114.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fp5l")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+offset_left = 13.0
+offset_top = 7.0
+offset_right = 40.0
+offset_bottom = 36.0
+texture = ExtResource("8_ikgqv")
+expand_mode = 1
+
+[node name="X" type="Label" parent="HUD"]
+offset_left = 46.0
+offset_top = 10.0
+offset_right = 86.0
+offset_bottom = 33.0
+text = "X"
+
+[node name="Coins" type="Label" parent="HUD"]
+offset_left = 62.0
+offset_top = 11.0
+offset_right = 102.0
+offset_bottom = 34.0
+text = "##"
+
+[connection signal="coin_collected" from="Coins-LW/Coins" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins-NW/Coins" to="HUD" method="_on_coin_collected"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf5q3crtnpei8"]
+
+[ext_resource type="Texture2D" uid="uid://bye8c2evfhtd7" path="res://icon.svg" id="1_0darh"]
+[ext_resource type="Script" path="res://scripts/key.gd" id="1_2o2mi"]
+[ext_resource type="AudioStream" uid="uid://bowqkfgs4d15n" path="res://Platformer-25-Assets (1)/Platformer-25-Assets/confirmation_002.ogg" id="3_5n8xm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ct0a"]
+atlas = ExtResource("1_0darh")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqpjp"]
+atlas = ExtResource("1_0darh")
+region = Rect2(0, 32, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25k4o"]
+atlas = ExtResource("1_0darh")
+region = Rect2(0, 64, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcowv"]
+atlas = ExtResource("1_0darh")
+region = Rect2(0, 96, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8saa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ct0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqpjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25k4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcowv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8tmn"]
+size = Vector2(18, 4)
+
+[node name="Key" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_2o2mi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.1875, 0.1875)
+sprite_frames = SubResource("SpriteFrames_o8saa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_q8tmn")
+
+[node name="SoundKey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5n8xm")
+volume_db = -15.0
+
+[connection signal="body_entered" from="." to="." method="_on_Key_body_entered"]
+[connection signal="finished" from="SoundKey" to="." method="_on_sound_key_finished"]
