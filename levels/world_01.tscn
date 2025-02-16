@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brpjuurhxm2eg" path="res://items/coin.tscn" id="3_wbixv"]
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
 [ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
-[ext_resource type="Script" path="res://levels/hud.gd" id="8_4p7cw"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="8_4p7cw"]
 [ext_resource type="Texture2D" uid="uid://bye8c2evfhtd7" path="res://icon.svg" id="8_ikgqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgmjl"]
