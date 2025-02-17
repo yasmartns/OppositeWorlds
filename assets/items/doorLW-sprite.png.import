@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bieh7qtuju08i"
-path="res://.godot/imported/10463909-pixel-old-key-for-games-gratis-vetor.png-fdea33a240c6862898f516f5fc2228ad.ctex"
+uid="uid://d18krcctk0f5g"
+path="res://.godot/imported/doorLW-sprite.png-5c2fac4f8dc2238dfd26875adbb5a238.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://10463909-pixel-old-key-for-games-gratis-vetor.png"
-dest_files=["res://.godot/imported/10463909-pixel-old-key-for-games-gratis-vetor.png-fdea33a240c6862898f516f5fc2228ad.ctex"]
+source_file="res://assets/items/doorLW-sprite.png"
+dest_files=["res://.godot/imported/doorLW-sprite.png-5c2fac4f8dc2238dfd26875adbb5a238.ctex"]
 
 [params]
 

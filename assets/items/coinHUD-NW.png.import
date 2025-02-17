@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd3mjqfgkrh1f"
-path="res://.godot/imported/22024476-fechar-e-aberto-porta-dentro-pixel-arte-estilo-vetor.png-942558935b15f69ad53ff9aa95debf7a.ctex"
+uid="uid://8ny38brrkypc"
+path="res://.godot/imported/coinHUD-NW.png-e60ebf3503f5e3d50a93471483b3fd1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://22024476-fechar-e-aberto-porta-dentro-pixel-arte-estilo-vetor.png"
-dest_files=["res://.godot/imported/22024476-fechar-e-aberto-porta-dentro-pixel-arte-estilo-vetor.png-942558935b15f69ad53ff9aa95debf7a.ctex"]
+source_file="res://assets/items/coinHUD-NW.png"
+dest_files=["res://.godot/imported/coinHUD-NW.png-e60ebf3503f5e3d50a93471483b3fd1a.ctex"]
 
 [params]
 
