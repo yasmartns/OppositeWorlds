@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
 [ext_resource type="Script" path="res://scripts/coin_2.gd" id="5_764xl"]
 [ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
+
 [ext_resource type="PackedScene" uid="uid://7c2rhb7u7s6m" path="res://items/key_2.tscn" id="6_yeo7p"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="8_4p7cw"]
 [ext_resource type="Texture2D" uid="uid://dbuq84hxcxywl" path="res://assets/items/HUD-LW.png" id="9_hd1jb"]
