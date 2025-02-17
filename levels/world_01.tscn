@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://1emtmwvv3jdk"]
+[gd_scene load_steps=20 format=4 uid="uid://1emtmwvv3jdk"]
 
 [ext_resource type="Texture2D" uid="uid://c6uawdhtw50ky" path="res://assets/tileset/nox-tileset.png" id="1_0kre4"]
 [ext_resource type="Texture2D" uid="uid://dyjaugugjsd5" path="res://assets/tileset/lumin-tileset.png" id="2_j56xb"]
@@ -6,9 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://5khy7b6c4ovw" path="res://actors/player_2.tscn" id="3_7dpcd"]
 [ext_resource type="PackedScene" uid="uid://brpjuurhxm2eg" path="res://items/coin.tscn" id="3_wbixv"]
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
+[ext_resource type="Script" path="res://scripts/coin_2.gd" id="5_764xl"]
 [ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
+
+[ext_resource type="PackedScene" uid="uid://7c2rhb7u7s6m" path="res://items/key_2.tscn" id="6_yeo7p"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="8_4p7cw"]
-[ext_resource type="Texture2D" uid="uid://bye8c2evfhtd7" path="res://icon.svg" id="8_ikgqv"]
+[ext_resource type="Texture2D" uid="uid://dbuq84hxcxywl" path="res://assets/items/HUD-LW.png" id="9_hd1jb"]
+[ext_resource type="Texture2D" uid="uid://dxe7wrjmu6pav" path="res://assets/items/coinHUD-LW.png" id="10_fjm6q"]
+[ext_resource type="FontFile" uid="uid://cqsajjqkx6jkj" path="res://fonts/I-pixel-u.ttf" id="11_4w6bv"]
+[ext_resource type="Script" path="res://scripts/hud_nw.gd" id="13_4bpil"]
+[ext_resource type="Texture2D" uid="uid://ctt1c36qga68f" path="res://assets/items/HUD-NW.png" id="14_e3xgb"]
+[ext_resource type="Texture2D" uid="uid://8ny38brrkypc" path="res://assets/items/coinHUD-NW.png" id="15_ekkw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hgmjl"]
 texture = ExtResource("1_0kre4")
@@ -97,13 +105,6 @@ physics_layer_1/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_hgmjl")
 sources/3 = SubResource("TileSetAtlasSource_2f6lq")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fp5l"]
-bg_color = Color(0, 0, 0, 0.301961)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [node name="World-01" type="Node2D"]
 
 [node name="Level-NTM" type="TileMapLayer" parent="."]
@@ -118,15 +119,24 @@ position = Vector2(184, 248)
 
 [node name="Coins-NW" type="Node2D" parent="."]
 
-[node name="Coins" parent="Coins-NW" instance=ExtResource("4_ili7a")]
+[node name="Coins2" parent="Coins-NW" instance=ExtResource("4_ili7a")]
 position = Vector2(120, 108)
+script = ExtResource("5_764xl")
 
 [node name="Level-LTM" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAACABMAAwABAAAAAAADABMAAwABAAAAAAAEABMAAwABAAAAAAAFABMAAwABAAAAAAAGABMAAwABAAAAAAAHABMAAwABAAAAAAAIABMAAwABAAAAAAAJABMAAwABAAAAAAAKABMAAwABAAAAAAALABMAAwABAAAAAAAMABMAAwABAAAAAAANABMAAwABAAAAAAAOABMAAwABAAAAAAAPABMAAwABAAAAAAAQABMAAwABAAAAAAARABMAAwADAAAAAAAIABAAAwAAAAAAAAALABAAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_54r8h")
 
-[node name="Key" parent="." instance=ExtResource("5_r8ahy")]
+[node name="Key-NW" type="Node2D" parent="."]
+
+[node name="Key2" parent="Key-NW" instance=ExtResource("6_yeo7p")]
+position = Vector2(261, 63)
+
+[node name="Key-LW" type="Node2D" parent="."]
 position = Vector2(122, 293)
+
+[node name="Key" parent="Key-LW" instance=ExtResource("5_r8ahy")]
+hud = NodePath("../../HUD-LW")
 
 [node name="Player1" parent="." instance=ExtResource("2_t8t64")]
 position = Vector2(74, 254)
@@ -134,35 +144,89 @@ position = Vector2(74, 254)
 [node name="Player2" parent="." instance=ExtResource("3_7dpcd")]
 position = Vector2(77, 83)
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD-LW" type="CanvasLayer" parent="."]
 script = ExtResource("8_4p7cw")
 
-[node name="Panel" type="Panel" parent="HUD"]
+[node name="hudlw" type="TextureRect" parent="HUD-LW"]
+offset_left = 8.0
+offset_top = 8.0
 offset_right = 114.0
-offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_1fp5l")
+offset_bottom = 59.0
+texture = ExtResource("9_hd1jb")
+metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="HUD"]
-offset_left = 13.0
-offset_top = 7.0
-offset_right = 40.0
-offset_bottom = 36.0
-texture = ExtResource("8_ikgqv")
+[node name="TextureRect" type="TextureRect" parent="HUD-LW"]
+anchors_preset = -1
+anchor_right = 0.003125
+offset_left = 19.0
+offset_top = 18.0
+offset_right = 46.0
+offset_bottom = 47.0
+texture = ExtResource("10_fjm6q")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="X" type="Label" parent="HUD"]
-offset_left = 46.0
-offset_top = 10.0
-offset_right = 86.0
-offset_bottom = 33.0
-text = "X"
+[node name="X" type="Label" parent="HUD-LW"]
+offset_left = 53.0
+offset_top = 14.0
+offset_right = 93.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("11_4w6bv")
+theme_override_font_sizes/font_size = 24
+text = "x"
+metadata/_edit_use_anchors_ = true
 
-[node name="Coins" type="Label" parent="HUD"]
-offset_left = 62.0
-offset_top = 11.0
-offset_right = 102.0
-offset_bottom = 34.0
+[node name="Coins" type="Label" parent="HUD-LW"]
+offset_left = 68.0
+offset_top = 17.0
+offset_right = 108.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("11_4w6bv")
+theme_override_font_sizes/font_size = 24
+text = "##"
+metadata/_edit_use_anchors_ = true
+
+[node name="Key" type="TextureRect" parent="HUD-LW"]
+offset_left = 14.0
+offset_top = 54.0
+offset_right = 38.0
+offset_bottom = 78.0
+
+[node name="HUD-NW" type="CanvasLayer" parent="."]
+script = ExtResource("13_4bpil")
+
+[node name="hudnw" type="TextureRect" parent="HUD-NW"]
+offset_left = 520.0
+offset_top = 8.0
+offset_right = 626.0
+offset_bottom = 59.0
+texture = ExtResource("14_e3xgb")
+
+[node name="TextureRect" type="TextureRect" parent="HUD-NW"]
+offset_left = 531.0
+offset_top = 18.0
+offset_right = 563.0
+offset_bottom = 48.0
+texture = ExtResource("15_ekkw8")
+
+[node name="x" type="Label" parent="HUD-NW"]
+offset_left = 566.0
+offset_top = 15.0
+offset_right = 606.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("11_4w6bv")
+theme_override_font_sizes/font_size = 24
+text = "x"
+
+[node name="Coins2" type="Label" parent="HUD-NW"]
+offset_left = 579.0
+offset_top = 18.0
+offset_right = 619.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("11_4w6bv")
+theme_override_font_sizes/font_size = 24
 text = "##"
 
-[connection signal="coin_collected" from="Coins-LW/Coins" to="HUD" method="_on_coin_collected"]
-[connection signal="coin_collected" from="Coins-NW/Coins" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins-LW/Coins" to="HUD-LW" method="_on_coin_collected"]
+[connection signal="coin2_collected" from="Coins-NW/Coins2" to="HUD-NW" method="_on_coin_2_collected"]
+[connection signal="body_entered" from="Key-LW/Key" to="Key-LW/Key" method="_on_key_body_entered"]
