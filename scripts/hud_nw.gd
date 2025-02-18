@@ -1,9 +1,11 @@
 extends CanvasLayer
-var coins = 0
+var coins2 = 0
+@onready var key = $Key2
+
 
 func _ready() -> void:
-	$Coins2.text = str(coins)
+	$Coins2.text = str(coins2)
 
 func _on_coin_2_collected() -> void:
-	coins = coins + 1
+	coins2 = coins2 + 1
 	_ready()
