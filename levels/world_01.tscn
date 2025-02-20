@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://1emtmwvv3jdk"]
+[gd_scene load_steps=22 format=4 uid="uid://1emtmwvv3jdk"]
 
 [ext_resource type="Texture2D" uid="uid://c6uawdhtw50ky" path="res://assets/tileset/nox-tileset.png" id="1_0kre4"]
 [ext_resource type="Texture2D" uid="uid://dyjaugugjsd5" path="res://assets/tileset/lumin-tileset.png" id="2_j56xb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://lshef04788i0" path="res://items/door.tscn" id="3_0jd0o"]
 [ext_resource type="PackedScene" uid="uid://5khy7b6c4ovw" path="res://actors/player_2.tscn" id="3_7dpcd"]
 [ext_resource type="PackedScene" uid="uid://brpjuurhxm2eg" path="res://items/coin.tscn" id="3_wbixv"]
+[ext_resource type="PackedScene" uid="uid://f6giokgbw6qs" path="res://items/door_2.tscn" id="4_c3hk5"]
 [ext_resource type="PackedScene" uid="uid://boah4cxspjnce" path="res://items/coin2.tscn" id="4_ili7a"]
 [ext_resource type="Script" path="res://scripts/coin_2.gd" id="5_764xl"]
 [ext_resource type="PackedScene" uid="uid://cf5q3crtnpei8" path="res://items/key.tscn" id="5_r8ahy"]
@@ -118,6 +119,11 @@ tile_set = SubResource("TileSet_54r8h")
 position = Vector2(248, 284)
 hud = NodePath("../../HUD-LW")
 
+[node name="Door2" parent="Doors" instance=ExtResource("4_c3hk5")]
+position = Vector2(247, 68)
+rotation = -3.14159
+hud = NodePath("../../HUD-NW")
+
 [node name="Coins-LW" type="Node2D" parent="."]
 
 [node name="Coins" parent="Coins-LW" instance=ExtResource("3_wbixv")]
@@ -136,7 +142,7 @@ tile_set = SubResource("TileSet_54r8h")
 [node name="Key-NW" type="Node2D" parent="."]
 
 [node name="Key2" parent="Key-NW" instance=ExtResource("6_yeo7p")]
-position = Vector2(261, 63)
+position = Vector2(170, 105)
 hud = NodePath("../../HUD-NW")
 
 [node name="Key-LW" type="Node2D" parent="."]

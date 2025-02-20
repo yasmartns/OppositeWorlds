@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	var on_ground = is_on_floor() if !inverted_gravity else is_on_ceiling()
 
 	# Pulo
-	if Input.is_action_just_pressed("ui_up") and on_ground:
+	if Input.is_action_just_pressed("ui_accept") and on_ground:
 		velocity.y = JUMP_FORCE 
 
 	# Movimento horizontal
