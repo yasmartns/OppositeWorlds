@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://lshef04788i0"]
+[gd_scene load_steps=17 format=3 uid="uid://lshef04788i0"]
 
 [ext_resource type="Script" path="res://scripts/door.gd" id="1_47a06"]
 [ext_resource type="Texture2D" uid="uid://d18krcctk0f5g" path="res://assets/items/doorLW-sprite.png" id="3_1x16i"]
+[ext_resource type="AudioStream" uid="uid://cf1rs8xnl2vr" path="res://Platformer-25-Assets (1)/Platformer-25-Assets/question_003.ogg" id="3_uhrvo"]
+[ext_resource type="AudioStream" uid="uid://bro5wxea26iu4" path="res://Platformer-25-Assets (1)/Platformer-25-Assets/pepSound1.ogg" id="4_xt2pg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7nrr"]
 atlas = ExtResource("3_1x16i")
@@ -88,7 +90,7 @@ animations = [{
 size = Vector2(8, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkngt"]
-size = Vector2(94, 18)
+size = Vector2(74, 18)
 
 [node name="Door" type="Area2D"]
 position = Vector2(0, -8)
@@ -108,6 +110,14 @@ shape = SubResource("RectangleShape2D_lmhtq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearDoor"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_mkngt")
+
+[node name="SoundUnlock" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uhrvo")
+volume_db = -15.0
+
+[node name="SoundLocked" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xt2pg")
+volume_db = -2.0
 
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Door_body_exited"]
