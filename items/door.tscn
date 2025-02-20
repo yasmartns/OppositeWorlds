@@ -91,12 +91,13 @@ size = Vector2(8, 18)
 size = Vector2(94, 18)
 
 [node name="Door" type="Area2D"]
+position = Vector2(0, -8)
 script = ExtResource("1_47a06")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_c2gvn")
-animation = &"open"
+animation = &"locked"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
@@ -110,3 +111,4 @@ shape = SubResource("RectangleShape2D_mkngt")
 
 [connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Door_body_exited"]
+[connection signal="body_entered" from="NearDoor" to="." method="_on_NearDoor_body_entered"]

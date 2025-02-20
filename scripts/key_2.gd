@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _on_Key2_body_entered(body: Node2D) -> void:
 	visible = false
-	set_collision_mask_value(0, false)
+	set_collision_mask_value(1, false)
 	$SoundKey2.play()
 	
 	var key2_node = hud_node.get_node_or_null("Key2")
