@@ -90,25 +90,27 @@ animations = [{
 size = Vector2(8, 18)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkngt"]
-size = Vector2(74, 18)
+size = Vector2(37, 18)
 
 [node name="Door" type="Area2D"]
 position = Vector2(0, -8)
 script = ExtResource("1_47a06")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.25, 1.25)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_c2gvn")
 animation = &"locked"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_lmhtq")
 
 [node name="NearDoor" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NearDoor"]
 position = Vector2(0, 7)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_mkngt")
 
 [node name="SoundUnlock" type="AudioStreamPlayer2D" parent="."]

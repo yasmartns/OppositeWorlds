@@ -110,45 +110,48 @@ sources/3 = SubResource("TileSetAtlasSource_2f6lq")
 
 [node name="Level-NTM" type="TileMapLayer" parent="."]
 rotation = -3.14159
-tile_map_data = PackedByteArray("AAD9//3/AgACAAAAAAD8//3/AgACAAAAAAD7//3/AgACAAAAAAD6//3/AgACAAAAAAD5//3/AgACAAAAAAD4//3/AgACAAAAAAD3//3/AgACAAAAAAD2//3/AgACAAAAAAD1//3/AgACAAAAAAD0//3/AgACAAAAAADz//3/AgACAAAAAADy//3/AgACAAAAAADx//3/AgACAAAAAADw//3/AgACAAAAAADv//3/AgACAAAAAADu//3/AgABAAAAAAD+//3/AgADAAAAAAD1//r/AgAAAAAAAAD4//r/AgAAAAAAAAA=")
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AADs////AgABAAAAAAD/////AgADAAAAAAD+////AgACAAAAAAD9////AgACAAAAAAD8////AgACAAAAAAD7////AgACAAAAAAD6////AgACAAAAAAD5////AgACAAAAAAD4////AgACAAAAAAD3////AgACAAAAAAD2////AgACAAAAAAD1////AgACAAAAAAD0////AgACAAAAAADz////AgACAAAAAADy////AgACAAAAAADx////AgACAAAAAADw////AgACAAAAAADv////AgACAAAAAADu////AgACAAAAAADt////AgACAAAAAAD+/wAAAgACAAEAAAD9/wAAAgACAAEAAAD8/wAAAgACAAEAAAD7/wAAAgACAAEAAAD6/wAAAgACAAEAAAD5/wAAAgACAAEAAAD4/wAAAgACAAEAAAD3/wAAAgACAAEAAAD2/wAAAgACAAEAAAD1/wAAAgACAAEAAAD0/wAAAgACAAEAAADz/wAAAgACAAEAAADy/wAAAgACAAEAAADx/wAAAgACAAEAAADw/wAAAgACAAEAAADv/wAAAgACAAEAAADu/wAAAgACAAEAAADt/wAAAgACAAEAAADs/wAAAgABAAEAAAD//wAAAgADAAEAAAA=")
 tile_set = SubResource("TileSet_54r8h")
 
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="Door" parent="Doors" instance=ExtResource("3_0jd0o")]
-position = Vector2(248, 284)
+position = Vector2(574, 257)
 hud = NodePath("../../HUD-LW")
 
 [node name="Door2" parent="Doors" instance=ExtResource("4_c3hk5")]
-position = Vector2(247, 68)
+position = Vector2(490, 64)
 rotation = -3.14159
 hud = NodePath("../../HUD-NW")
 
 [node name="Coins-LW" type="Node2D" parent="."]
 
 [node name="Coins" parent="Coins-LW" instance=ExtResource("3_wbixv")]
-position = Vector2(184, 248)
+position = Vector2(430, 270)
 
 [node name="Coins-NW" type="Node2D" parent="."]
 
 [node name="Coins2" parent="Coins-NW" instance=ExtResource("4_ili7a")]
-position = Vector2(120, 108)
+position = Vector2(365, 52)
 script = ExtResource("5_764xl")
 
 [node name="Level-LTM" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACABMAAwABAAAAAAADABMAAwABAAAAAAAEABMAAwABAAAAAAAFABMAAwABAAAAAAAGABMAAwABAAAAAAAHABMAAwABAAAAAAAIABMAAwABAAAAAAAJABMAAwABAAAAAAAKABMAAwABAAAAAAALABMAAwABAAAAAAAMABMAAwABAAAAAAANABMAAwABAAAAAAAOABMAAwABAAAAAAAPABMAAwABAAAAAAAQABMAAwABAAAAAAARABMAAwADAAAAAAAIABAAAwAAAAAAAAALABAAAwAAAAAAAAA=")
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAkAAwABAAAAAAABAAkAAwACAAAAAAACAAkAAwACAAAAAAADAAkAAwACAAAAAAAEAAkAAwACAAAAAAAFAAkAAwACAAAAAAAGAAkAAwACAAAAAAAHAAkAAwACAAAAAAAIAAkAAwACAAAAAAAJAAkAAwACAAAAAAAKAAkAAwACAAAAAAALAAkAAwACAAAAAAAMAAkAAwACAAAAAAANAAkAAwACAAAAAAAOAAkAAwACAAAAAAAPAAkAAwACAAAAAAAQAAkAAwACAAAAAAARAAkAAwACAAAAAAASAAkAAwACAAAAAAATAAkAAwACAAAAAAA=")
 tile_set = SubResource("TileSet_54r8h")
 
 [node name="Key-NW" type="Node2D" parent="."]
 
 [node name="Key2" parent="Key-NW" instance=ExtResource("6_yeo7p")]
-position = Vector2(170, 105)
+position = Vector2(225, 48)
 hud = NodePath("../../HUD-NW")
 
 [node name="Key-LW" type="Node2D" parent="."]
 position = Vector2(122, 293)
 
 [node name="Key" parent="Key-LW" instance=ExtResource("5_r8ahy")]
+position = Vector2(173, -27)
 hud = NodePath("../../HUD-LW")
 
 [node name="Player1" parent="." instance=ExtResource("2_t8t64")]
