@@ -41,7 +41,7 @@ script = ExtResource("1_gliuf")
 
 [node name="Animation" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 13)
-scale = Vector2(1.0625, 1.0625)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_s06lt")
 animation = &"idle"
 autoplay = "idle"
@@ -49,4 +49,5 @@ frame_progress = 0.715839
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 12.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_6o7gn")

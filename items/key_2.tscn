@@ -26,11 +26,12 @@ size = Vector2(18, 4)
 script = ExtResource("1_obtno")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3fj4s")
 animation = &"key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_n5wvt")
 
 [node name="SoundKey2" type="AudioStreamPlayer2D" parent="."]
